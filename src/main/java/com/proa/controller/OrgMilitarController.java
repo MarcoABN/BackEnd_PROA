@@ -21,7 +21,7 @@ import com.proa.model.OrgMilitar;
 import com.proa.repository.OrgMilitarRepository;
 
 
-@CrossOrigin (origins = "*")
+//@CrossOrigin (origins = "*")
 @RequestMapping ("/corgmilitar/")
 @RestController
 public class OrgMilitarController {
