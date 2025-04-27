@@ -8,8 +8,6 @@ com\proa\repository\ClienteRepository.class
 com\proa\model\Prestador.class
 com\proa\controller\EmailController.class
 com\proa\repository\PrestadorRepository.class
-com\proa\controller\CorsConfig$1.class
-com\proa\controller\CorsConfig.class
 com\proa\controller\EmbarcacaoController.class
 com\proa\controller\MotorController.class
 com\proa\controller\NotaFiscalController.class
