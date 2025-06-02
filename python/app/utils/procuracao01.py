@@ -14,6 +14,8 @@ def safe_get(d, key):
 def gerar_pdf_procuracao(cliente, embarcacao):
     doc = Document("docs/procuracao01OR.docx")
 
+    print ('Entrou no utils', cliente)
+
     placeholders = {
         "${nomecliente}": safe_get(cliente, "nome"),
         "${nacionalidade}": safe_get(cliente, "nacionalidade"),
@@ -84,5 +86,5 @@ def gerar_pdf_procuracao(cliente, embarcacao):
     # Limpar arquivos temporários
     os.unlink(tmp_docx_path)
     os.unlink(tmp_pdf_path)
-
+    print ('vai retornar o pdf')
     return pdf_bytes
