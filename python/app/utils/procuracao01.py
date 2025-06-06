@@ -11,34 +11,26 @@ def safe_str(value):
 def safe_get(d, key):
     return d.get(key) if d.get(key) not in [None, 0, "0", "0.0"] else ""
 
-def gerar_pdf_procuracao(cliente, embarcacao):
+def gerar_pdf_procuracao(cliente):
     doc = Document("docs/procuracao01OR.docx")
 
     print ('Entrou no utils', cliente)
 
     placeholders = {
-        "${nomecliente}": safe_get(cliente, "nome"),
-        "${nacionalidade}": safe_get(cliente, "nacionalidade"),
-        "${enderecocompleto}": f"{safe_get(cliente, 'logradouro')}, {safe_get(cliente, 'numero')}, {safe_get(cliente, 'bairro')} - {safe_get(cliente, 'cidade')} - {safe_get(cliente, 'uf')}",
-        "${identidade}": safe_get(cliente, "rg"),
-        "${orgaoexpedidor}": safe_get(cliente, "orgEmissor"),
-        "${cpfcliente}": safe_get(cliente, "cpfcnpj"),
+        "${nomecliente1}": safe_get(cliente, "nome"),
+        "${enderecocliente}": safe_get(cliente, 'logradouro'),
+        "${cep}": safe_get(cliente, "cep"),
+        "${cidade}": safe_get(cliente, "cidade"),
+        "${bairro}": safe_get(cliente, "bairro"),
+        "${rg}": safe_get(cliente, "rg"),
+        "${orgexpedidor}": safe_get(cliente, "orgEmissor"),
+        "${cpfcliente1}": safe_get(cliente, "cpfcnpj"),
+        "${email}": safe_get(cliente, "email"),
+        "${celular}": safe_get(cliente, "celular"),
 
-        "${nomeemb}": safe_get(embarcacao, "nomeEmbarcacao"),
-        "${numinscricao}": safe_get(embarcacao, "numInscricao"),
-        "${tipo}": safe_get(embarcacao, "tipoEmbarcacao"),
-        "${atividade}": safe_get(embarcacao, "tipoAtividade"),
-        "${comprimento}": safe_str(embarcacao.get("compTotal")),
-        "${tripulantes}": safe_str(embarcacao.get("qtdTripulantes")),
-        "${boca}": safe_str(embarcacao.get("bocaMoldada")),
-        "${passageiros}": safe_str(embarcacao.get("lotacao")),
-        "${numcasco}": safe_get(embarcacao, "numCasco"),
-        "${materialcasco}": safe_get(embarcacao, "matCasco"),
-        "${potencia}": safe_str(embarcacao.get("potenciaMotor")),
-        "${numserie}": safe_get(embarcacao, "numInscricao"),
-
-        "${local}": safe_get(embarcacao, "cidade"),
-        "${data}": datetime.now().strftime("%d/%m/%Y"),
+        "${nomecliente2}": safe_get(cliente, "nome"),
+        "${cpfcliente2}": safe_get(cliente, "cpfcnpj"),
+        
     }
 
     # Substituir nos parágrafos
