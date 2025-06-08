@@ -13,10 +13,13 @@ com\proa\controller\MotorController.class
 com\proa\controller\NotaFiscalController.class
 com\proa\repository\EmbarcacaoRepository.class
 com\proa\repository\NotaFiscalRepository.class
+com\proa\repository\EscolaNauticaRepository.class
 com\proa\controller\ClienteController.class
 com\proa\model\NotaFiscal.class
+com\proa\model\EscolaNautica.class
 com\proa\model\OrgMilitar.class
 com\proa\controller\PrestadorController.class
+com\proa\controller\EscolaNauticaController.class
 com\proa\exception\ResourceNotFoundException.class
 com\proa\service\EmailService.class
 com\proa\repository\MotorRepository.class

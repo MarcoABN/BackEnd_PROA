@@ -101,22 +101,12 @@ public class ClienteController {
 		clientetLocalizado.setUF(cliente.getUF());
 		clientetLocalizado.setCidade(cliente.getCidade());
 		clientetLocalizado.setCep(cliente.getCep());
+		clientetLocalizado.setCha_categoria(cliente.getCha_categoria());
+		clientetLocalizado.setCha_numero(cliente.getCha_numero());
+		clientetLocalizado.setCha_dtemissao(cliente.getCha_dtemissao());
+		
 		//Relacionamento
 		clientetLocalizado.setOrgmilitar(cliente.getOrgmilitar());
-		
-		System.out.println(cliente.getDataNasc());
-		System.out.println(clientetLocalizado.getDataNasc());
-		
-		/*AVALIAR COMO DEVE SER TRATADO A QUESTÃO DO RELACIONAMENTO:
-		 * AO CRIAR GET/POST PARA OS RELACIONAMENTOS, TEMOS LOOP NAS VALIDAÇÕES
-		 * LOGO, DEVE-SE:
-		 * 1- CRIAR UMA NOVA INSTÂNCIA MANTENDO OS DADOS E SINALIZANDO A NOVA "TITUALIDADE"
-		 * 2- CRIAR UMA NOVA INSTÂNCIA EXCLUINDO OS DADOS E SINALIZANDO A NOVA "TITUALIDADE"
-		 * 3- AVALIAR FORMAS DE ALTERAÇÃO DO PRÓPRIO DADO CADASTRADO (CHAVE EXTRANGEIRA)
-		 * 
-		 * 
-		 * */
-		
 
 		Cliente atualizado = this.clientRep.save(clientetLocalizado);
 
