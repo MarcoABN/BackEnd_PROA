@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.proa.exception.ResourceNotFoundException;
@@ -131,6 +132,21 @@ public class ClienteController {
 
 	}
 	
+	//Novo método para consultar Cliente por nome (busca parcial)
+    @GetMapping("/cliente/buscar-por-nome")
+    public ResponseEntity<List<Cliente>> consultarPorNome(@RequestParam String nome) {
+        if (nome == null || nome.trim().isEmpty()) {
+            throw new ResourceNotFoundException("Nome não pode ser vazio");
+        }
+        
+        List<Cliente> clientes = this.clientRep.findByNomeContainingIgnoreCase(nome.trim());
+        
+        if (clientes.isEmpty()) {
+            throw new ResourceNotFoundException("Nenhum cliente encontrado com o nome: " + nome);
+        }
+        
+        return ResponseEntity.ok(clientes);
+    }
 	
 	//
 }
