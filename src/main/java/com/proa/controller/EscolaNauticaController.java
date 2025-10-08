@@ -15,6 +15,10 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/cescolanautica")
+<<<<<<< HEAD
+=======
+@CrossOrigin(origins = "*")
+>>>>>>> f58abc8ad168d6a349f49f73878ceaaa4d2cbc3a
 public class EscolaNauticaController {
 
     @Autowired

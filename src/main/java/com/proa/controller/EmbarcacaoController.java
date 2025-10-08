@@ -21,6 +21,11 @@ import com.proa.exception.ResourceNotFoundException;
 import com.proa.model.Embarcacao;
 import com.proa.repository.EmbarcacaoRepository;
  
+<<<<<<< HEAD
+=======
+
+@CrossOrigin (origins = "*")
+>>>>>>> f58abc8ad168d6a349f49f73878ceaaa4d2cbc3a
 @RequestMapping ("/cembarcacao/")
 @RestController
 public class EmbarcacaoController {

@@ -24,6 +24,10 @@ import com.proa.model.Cliente;
 import com.proa.repository.ClienteRepository;
 import com.proa.service.EmailService;
 
+<<<<<<< HEAD
+=======
+@CrossOrigin (origins = "*")
+>>>>>>> f58abc8ad168d6a349f49f73878ceaaa4d2cbc3a
 @RequestMapping ("/ccliente/")
 @RestController
 public class ClienteController {
